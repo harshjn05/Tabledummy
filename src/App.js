@@ -1013,11 +1013,11 @@ function App() {
       minWidth: 50,
       maxWidth: 50
     },align: "center",
+    filtering: false,
     
     headerStyle: {
       fontSize:20
-    },
-    render:rowData=><Link href={`https://google.com`} target="_blank">{rowData.id}</Link>
+    }
   },
   {
     
@@ -1027,9 +1027,10 @@ function App() {
       fontSize:20
     },
     cellStyle: {
-      minWidth: 200,
-      maxWidth: 200
-    }
+      minWidth: 250,
+      maxWidth: 250
+    },
+    filterPlaceholder:'Search First Name'
   },
   {
     title: 'Last Name',
@@ -1039,9 +1040,10 @@ function App() {
       fontSize:20
     },
     cellStyle: {
-      minWidth: 200,
-      maxWidth: 200
-    }
+      minWidth: 225,
+      maxWidth: 225
+    },
+    filterPlaceholder:'Search Last Name'
   },
 
   {
@@ -1053,9 +1055,10 @@ function App() {
       fontSize:20
     },
     cellStyle: {
-      minWidth: 200,
-      maxWidth: 200
-    }
+      minWidth: 220,
+      maxWidth: 220
+    },
+    filterPlaceholder:'Search Contact No.'
   },
   /*  {
       title: 'Email',
@@ -1073,7 +1076,9 @@ function App() {
     cellStyle: {
       minWidth: 200,
       maxWidth: 200
-    }
+    },
+    
+    filterPlaceholder:'Select Gender'
   },
   {
     title: 'IP Address',
@@ -1085,7 +1090,9 @@ function App() {
     cellStyle: {
       minWidth: 200,
       maxWidth: 200
-    }
+    },
+    filtering: false,
+    filterPlaceholder:'Search IP address'
   },
   {
     title: 'Initial_Balance',
@@ -1097,7 +1104,8 @@ function App() {
     cellStyle: {
       minWidth: 200,
       maxWidth: 200
-    }
+    },
+    filterPlaceholder:'Search Initial Balance'
   },
   {
     title: 'Final_Balance',
@@ -1110,6 +1118,7 @@ function App() {
       minWidth: 200,
       maxWidth: 200
     },
+    filterPlaceholder:'Search Final Balance'
 
   },
   {
@@ -1120,11 +1129,12 @@ function App() {
       fontSize:20
     },
     cellStyle: {
-      minWidth: 200,
-      maxWidth: 200,
+      minWidth: 220,
+      maxWidth: 220,
       fontSize: 20,
 
-    }
+    },
+    filterPlaceholder:'Search Company'
   },
   {
     title: 'DEPT',
@@ -1137,7 +1147,10 @@ function App() {
     cellStyle: {
       minWidth: 200,
       maxWidth:200,
-    }
+    },
+    filtering:false,
+    render:rowData=><Link href={`https://google.com`} target="_blank">Google</Link>
+
   },
   
   {
@@ -1151,6 +1164,7 @@ function App() {
       minWidth: 200,
       maxWidth: 200
     },
+    filtering:false,
     
     render:rowData=><Link href={`/user?id=${rowData.id}`} target="_blank"> Download</Link>
 
@@ -1174,7 +1188,7 @@ function App() {
         options={{
           sorting: true, search: true,
           searchFieldAlignment: "right", searchAutoFocus: true, searchFieldVariant: "standard",
-          filtering: true, paging: true, pageSizeOptions: [2, 5, 10, 20, 25, 50, 100], pageSize: 10,
+          filtering: true, paging: true, pageSizeOptions: [2, 5, 10, 20, 25, 50, 100], pageSize: 50,
           paginationType: "stepped", showFirstLastPageButtons: false, paginationPosition: "bottom", exportButton: true,
           exportAllData: true, exportFileName: "TableData", addRowPosition: "first",  
 
